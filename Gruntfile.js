@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       module: {
         expand: true,
         cwd: 'dist/src/module',
-        src: ['index.js'],
+        src: ['index/index.js'],
         dest: 'dist/src/module'
       }
     },
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
       js: {
         files: [{
           expand: true,
-          cwd: 'app/src/lib',
+          cwd: './../app/src/lib',
           src: ['*'],
           dest: 'dist/src/lib/'
         }]
@@ -90,11 +90,14 @@ module.exports = function(grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: ['app/*']
-      }
+      },
+      tasks: ['uglify']
     }
   });
 
   grunt.registerTask('default', [
+      'copy',
+      'uglify',
       'connect',
       'watch'
   ]);
