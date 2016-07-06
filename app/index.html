@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" http-equiv="content-type"></meta>
+    <title>welcome Backbone</title>
+  </head>
+
+  <body>
+    <div class="toggle">
+      <a href="#welcome">welcome</a>
+      <a href="#byebye">byebye</a>
+    </div>
+    <div id="content"></div>
+  </body>
+
+  <script src="src/lib/jquery-3.0.0.min.js"></script>
+  <script src="src/lib/underscore-min.js"></script>
+  <script src="src/lib/backbone.min.js"></script>
+  <script src="src/lib/sea.js"></script>
+  <script>
+    seajs.config({
+      base: "./src/module",
+      charset: "utf-8"
+    })
+
+    seajs.use("index/index");
+  </script>
+</html>
